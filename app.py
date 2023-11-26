@@ -1,13 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-#public ip: 81.107.232.9
-
-
 @app.route('/')
-def hello():
-    return 'Hello, jack'
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port='5000',debug=True)
+    app.run(debug=True)
